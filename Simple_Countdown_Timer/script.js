@@ -1,14 +1,14 @@
 // alert('is made by Pawel Macyszyn')
 
 
-const sec = 1000 // ms
+const sec = 10 // ms
 const startingMinutes = 10
 let time = startingMinutes * 60
 
 const countdownEl = document.getElementById('countdown')
 
 
-setInterval(updateCountdown, sec)
+setInterval(updateCountdown, sec) // sec = ms 
 
 
 function updateCountdown() {
