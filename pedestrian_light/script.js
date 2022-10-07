@@ -1,48 +1,65 @@
 /*
-Wszystkie stany (4)
-(1) po uruchomieniu stan zielony_off and czerwony_off
-(2) po wciśnięciu przycisku turn_ON_Off zielony_off and czerwony_on
-(3) po wciśnięciu press zielony_on and czerwony_off, po 5s stan (2)
-
+All states (4)
+(1) after starting the state green_off and red_off
+(2) after pressing the turn_ON_Off button green_off and red_on
+(3) after pressing press Green_on and Red_off for Time_for_Green, next is state (4)
+(4) Green_off and Red_on (2), after time Time_for_Red, you can jump into (3)
+(5) pressing the button turn_ON_Off, gives state (1)
 */
 
+//=============== SETUP ===================
 
-// const circles = document.querySelectorAll('.circle');
+const Time_for_Green = 5; // sec
+const Time_for_Red = 4; // sec
+
+// ---------------var-----------------------
 
 var Logic_Is_Enable = false;
 
-// if it is true, it means that it is waiting for the operation jumps
-var but_changeLightOnClick = false;
+//--------------- Timer -------------------
+const countdownEl = document.getElementById('countdown');
+const sec = 1000; // ms
+const Timer_Pt = Time_for_Green + Time_for_Red;
+var TimerId = null;
+let Timer_ET = Timer_Pt;
+let Timer_Enable = false;
+let Timer_Q = false;
 
-var activeLight = 0;
 
-const time_for_green = 3000
 
-function changeLight() {
-  
+function updateCountdown() {  
+  Timer_ET--;
+  //--------------LOGIC FOR LIGHT------------------
   if (Logic_Is_Enable) {
-    activeLight++;
-    // To delete
-    console.log(activeLight)
-
-    if(activeLight > 1){
-      activeLight = 0;
+    if ((Timer_ET >= (Timer_Pt - Time_for_Green))){
+      // console.log('Green', Timer_ET, "sec");
+      TURN_ON_Green_Light();
+      TURN_OFF_Red_Light();
+    } 
+    else {
+      // console.log('Red', Timer_ET, "sec");
+      TURN_OFF_Green_Light();
+      TURN_ON_Red_Light();
     }
-    TURN_Red_Lught();
-    TURN_Green_Lught();
+  }
+  //-----------------------------------------
+  
+  if (Timer_ET <= 0 || Logic_Is_Enable == false) {
+    Timer_Q = true;
+    Timer_Enable = false;
+    clearInterval(TimerId);
+    Timer_ET = Timer_Pt;
   }
 }
 
-// To change color to red
+//------------------------------------------
+
 function changeLightOnClick(){
-
-  if (Logic_Is_Enable && activeLight == 0) {
-
-    // but_changeLightOnClick = true;
-
-    setTimeout(changeLight, 0)
-    setTimeout(changeLight, time_for_green)
-
+  if (Logic_Is_Enable) {
+    if (Timer_Enable == false){
+      TimerId = setInterval(updateCountdown, sec);
+      Timer_Enable = true;
+    }
   }
 }
 
@@ -75,7 +92,7 @@ function TURN_OFF_Red_Light() {
   Light.style.boxShadow = "";
   }
 
-// -----------------------------------------------------
+// -------------------ADVANCED FEATURES TO COME------------------------
 
 function TURN_Green_Lught() {
   var Light = document.getElementById('color_green');
@@ -110,14 +127,9 @@ function turn_on_off() {
     TURN_OFF_Green_Light();
     TURN_OFF_Red_Light();
     Logic_Is_Enable = false;
-    activeLight = 0;
-    // To delete
-    console.log(activeLight)
-
   }
 }
-
-
+// -------------------------------------------------------------------
 
 const btn_1 = document.getElementById('btn_1');
 // Toggle button text on click
