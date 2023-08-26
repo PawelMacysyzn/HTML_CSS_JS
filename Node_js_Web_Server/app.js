@@ -1,3 +1,7 @@
+// ABY URUCHOMIC nalezy wprowadzić komendę:
+// node app.js
+
+
 // Importowanie modułów http i fs (file system)
 const http = require('http');
 const fs = require('fs');
