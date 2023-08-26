@@ -1,0 +1,4 @@
+ctrl + v                            Exit from console in environment Node.js
+
+
+put ! then press the enter          To create a blank html document
