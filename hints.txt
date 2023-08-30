@@ -2,3 +2,7 @@ ctrl + v                            Exit from console in environment Node.js
 
 
 put ! then press the enter          To create a blank html document
+
+$null > server.js                   Created empty js file
+
+Open in new window                         (Ctrl + K  o)
