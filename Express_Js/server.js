@@ -1,3 +1,7 @@
+// to create a server enter:
+// node server.js  (in his directory)
+// to abore ctrl + c
+
 const express = require("express")
 const app = express()
 

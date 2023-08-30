@@ -8,4 +8,8 @@ let p = new Promise((resolve, reject) => {
     }
 })
 
-p.then()
+p.then((mesage) => {
+    console.log("This is in the then " + mesage)
+}).catch((mesage) => {
+    console.log('This is in the catch ' + mesage)
+})
