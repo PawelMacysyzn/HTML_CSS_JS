@@ -1,8 +1,13 @@
 ctrl + v                            Exit from console in environment Node.js
 
 
+ctrl + space                        It tells us what to type
+
 put ! then press the enter          To create a blank html document
 
 $null > server.js                   Created empty js file
 
 Open in new window                         (Ctrl + K  o)
+
+
+npm init                           can be used to set up a new or existing npm package.
