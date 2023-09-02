@@ -2,17 +2,21 @@
 // node server.js  (in his directory)
 // to abore ctrl + c
 
-const express = require("express")
-const app = express()
+// Import the Express framework
+const express = require("express");
+const app = express();
 
-app.use(express.static("public"))
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+const port = process.env.PORT || 3001;
 
-app.set("view engine", "ejs")
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-const userRouter = require("./routes/users")
+app.set("view engine", "ejs");
 
-app.use("/users", userRouter)
+const userRouter = require("./routes/users");
+app.use("/users", userRouter);
 
-app.listen(3001)
+app.listen(port, () => {
+  console.log(`Application is listening on port ${port}\n`);
+});
