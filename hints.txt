@@ -11,3 +11,10 @@ Open in new window                         (Ctrl + K  o)
 
 
 npm init                           can be used to set up a new or existing npm package.
+
+
+// -------------------------------------------------------------------------------------
+git config --list  // wszycy uzytkownicy
+git config --list --global 
+git config --local user.email macyszyn78@gmail.com // zmiana uzytkownika dla repo 
+// -------------------------------------------------------------------------------------
