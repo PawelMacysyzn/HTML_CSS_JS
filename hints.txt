@@ -18,3 +18,8 @@ git config --list  // wszycy uzytkownicy
 git config --list --global 
 git config --local user.email macyszyn78@gmail.com // zmiana uzytkownika dla repo 
 // -------------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------------
+npm init        // with setup
+npm init -y     // skip setup
+// -------------------------------------------------------------------------------------
