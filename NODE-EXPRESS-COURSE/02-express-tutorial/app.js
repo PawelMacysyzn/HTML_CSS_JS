@@ -3,13 +3,13 @@ const app = express();
 const port = 5000;
 
 // ---------------  favicon.ico  ----------------
-const mainRoutes = require("./mainRoutes");
+const mainRoutes = require("./favicon/mainRoutes.js");
 app.use(mainRoutes);
 // ---------------  favicon.ico  ----------------
 
 app.get("/", (req, res) => {
   console.log("user hit the resource");
-  res.status(200).send("Home Page");
+  res.send("Home Page");
 });
 
 app.get("/about", (req, res) => {
