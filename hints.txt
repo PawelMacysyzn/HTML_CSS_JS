@@ -13,7 +13,7 @@ Open in new window                  (Ctrl + K  o)
 npm init                            can be used to set up a new or existing npm package.
 
 
-// -------------------------------------------------------------------------------------
+// ------------------------  Zmaian uzytkownika git  -----------------------------------
 git config --list  // wszycy uzytkownicy
 git config --list --global 
 git config --local user.email macyszyn78@gmail.com // zmiana uzytkownika dla repo 
@@ -23,3 +23,21 @@ git config --local user.email macyszyn78@gmail.com // zmiana uzytkownika dla rep
 npm init        // with setup
 npm init -y     // skip setup
 // -------------------------------------------------------------------------------------
+
+
+// ------------------------          js              -----------------------------------
+
+const plik1 = require('../plik1.js'); // ../ oznacza "przejdź do katalogu nadrzędnego".
+// Oznacza to, że jesteś w obecnym katalogu, a ../ pozwala przejść do katalogu znajdującego się powyżej.
+
+// -------------------------------------------------------------------------------------
+
+
+
+// ---------------------------        js express      -----------------------------------
+
+
+npm init -y                           tworzy "package.json" z domyslna opcjja yes
+
+// -------------------------------------------------------------------------------------
+
