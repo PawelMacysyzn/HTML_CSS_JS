@@ -1,1 +1,4 @@
 /YMT*
+node_modules
+.vscode
+Express_fileupload/uploads/*
