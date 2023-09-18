@@ -10,7 +10,7 @@ $null > server.js                   Created empty js file
 Open in new window                  (Ctrl + K  o)
 
 
-npm init                            can be used to set up a new or existing npm package.
+npm init                            
 
 
 // ------------------------  Zmaian uzytkownika git  -----------------------------------
@@ -19,8 +19,8 @@ git config --list --global
 git config --local user.email macyszyn78@gmail.com // zmiana uzytkownika dla repo 
 // -------------------------------------------------------------------------------------
 
-// -------------------------------------------------------------------------------------
-npm init        // with setup
+// ---------------------------        js express      -----------------------------------
+npm init        // can be used to set up a new or existing npm package
 npm init -y     // skip setup
 // -------------------------------------------------------------------------------------
 
@@ -33,11 +33,4 @@ const plik1 = require('../plik1.js'); // ../ oznacza "przejdź do katalogu nadrz
 // -------------------------------------------------------------------------------------
 
 
-
-// ---------------------------        js express      -----------------------------------
-
-
-npm init -y                           tworzy "package.json" z domyslna opcjja yes
-
-// -------------------------------------------------------------------------------------
 
