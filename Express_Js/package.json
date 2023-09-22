@@ -7,7 +7,7 @@
     "devStart": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pablo",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
